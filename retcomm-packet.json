@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "defcon-5-psx",
+  "name": "Defcon 5",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "defcon-5-recomp",
+  "rom_identity": {
+    "crc32": [
+      "8426bc38"
+    ],
+    "md5": [
+      "606fdb24f57a9dd2bfbe9955ab1afb4b"
+    ],
+    "sha1": [
+      "a82dc5a55cbd0e02f27485a8d3655ee27436adb7"
+    ],
+    "disc_serials": [
+      "SLES-00081"
+    ],
+    "sizes": [
+      372086400
+    ],
+    "filenames": [
+      "Defcon 5 (Europe).cue",
+      "Defcon 5 (Europe) (Track 1).bin"
+    ],
+    "track_counts": [
+      3
+    ],
+    "disc_fps": [
+      "c3f944bcab300ad2ca1d93f28d3d8d5648a40e53026bbc946d56ed3ee470d6bd"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH5552.BIN",
+    "profile": "SCPH5552",
+    "crc32": [
+      "d786f0b9"
+    ],
+    "md5": [
+      "32736f17079d0b2b7024407c39bd3050"
+    ],
+    "sha1": [
+      "f6bc2d1f5eb6593de7d089c425ac681d6fffd3f0"
+    ],
+    "sha256": [
+      "1faaa18fa820a0225e488d9f086296b8e6c46df739666093987ff7d8fd352c09"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH5552.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/defcon-5-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "defcon-5-*-windows-x64.zip",
+      "linux-x64": "defcon-5-*-linux-x64.zip",
+      "macos-arm64": "defcon-5-*-macos-arm64.zip",
+      "macos-x64": "defcon-5-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "defcon_5.exe",
+    "linux": "defcon_5",
+    "macos": "defcon_5"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/defcon-5-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

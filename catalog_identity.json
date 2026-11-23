@@ -1,0 +1,46 @@
+{
+  "format_version": 1,
+  "game": {
+    "name": "Defcon 5",
+    "id": "SLES-00081",
+    "boot_exe": "SLES_000.81"
+  },
+  "marketing": {
+    "description": "",
+    "publisher": "",
+    "year": "",
+    "region": "Europe",
+    "players": 1
+  },
+  "rom_identity": {
+    "cue_name": "Defcon 5 (Europe).cue",
+    "bin_name": "Defcon 5 (Europe) (Track 1).bin",
+    "track_counts": [
+      3
+    ],
+    "require_cue": true,
+    "data_track": {
+      "size": 372086400,
+      "md5": "606fdb24f57a9dd2bfbe9955ab1afb4b",
+      "sha1": "a82dc5a55cbd0e02f27485a8d3655ee27436adb7",
+      "crc32": "8426bc38"
+    },
+    "disc_fp": "c3f944bcab300ad2ca1d93f28d3d8d5648a40e53026bbc946d56ed3ee470d6bd"
+  },
+  "exe": {
+    "load_address": "0x80010000",
+    "entry_pc": "0x800880F4",
+    "text_size": "0x000C0800",
+    "stack_base": "0x801FFFF0"
+  },
+  "seeds": {
+    "count": 868,
+    "source": "boot_exe_jal"
+  },
+  "warnings": [],
+  "notes": [
+    "entry_pc/load_address/text_size/stack_base taken from PS-X EXE header.",
+    "seeds are first-pass boot-EXE JAL targets (+ entry); expect to grow as overlays / runtime paths are discovered.",
+    "required_disc_fp is psxrecomp-toc-v1 (matches runtime DiscIdentity)."
+  ]
+}

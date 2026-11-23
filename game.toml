@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Defcon 5"
+id = "SLES-00081"
+players = 1
+exe = "disc/SLES_000.81"
+disc = "disc/Defcon 5 (Europe).cue"
+discs = ["disc/Defcon 5 (Europe).cue"]
+disc_serials = ["SLES-00081"]
+load_address = "0x80010000"
+entry_pc = "0x800880F4"
+text_size = "0x000C0800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Defcon 5 (Europe) (Track 1).bin"
+cue_name = "Defcon 5 (Europe).cue"
+boot_exe = "SLES_000.81"
+known_sizes = [372086400]
+known_md5 = [
+  "606fdb24f57a9dd2bfbe9955ab1afb4b",
+]
+known_sha1 = [
+  "a82dc5a55cbd0e02f27485a8d3655ee27436adb7",
+]
+known_crc32 = [
+  "8426bc38",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH5552.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Defcon 5 Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 3
+required_disc_fp = "c3f944bcab300ad2ca1d93f28d3d8d5648a40e53026bbc946d56ed3ee470d6bd"
